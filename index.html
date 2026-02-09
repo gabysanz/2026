@@ -39,15 +39,15 @@
 
         function create() {
             // Crear objetos del juego aquí
-            let posicionX = 100;
-            let posicionY = 100;
+            let posicionX = 0;
+            let posicionY = 0;
             let mensajes={
                 padrenuestro:{
                     siciliano: "Patri nostru, chi siti 'n celu, Sia santificatu lu vostru nomu,Vinissi prestu lu vostru regnu, Sempri sia fatta la vostra Divina Vuluntati, Comu 'n celu accussì 'n terra. Dàtinillu sta jurnata lu panuzzu cutiddianu, E pirdunàtini li nostri piccati, Accussì comu nuautri li rimittemu ê nostri nimici, E nun ni lassati cascari ntâ tintazzioni, ma scanzàtini dû mali. Ámin."
                 }
             }
-            this.add.text(posicionX, posicionY, 'Bienvenido a Phaser!', {
-                font: '32px Arial',
+            this.add.text(posicionX, posicionY, mensajes.padrenuestro.siciliano, {
+                font: '8px Arial',
                 fill: '#ffffff'
             }).setOrigin(0.5);
         }
