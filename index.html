@@ -88,10 +88,12 @@
 
             create() {
                 // Escena vacía; aquí podrás añadir manejadores de teclas para jugar
-                this.add.text(10, 10, 'Escena de entrada (presiona teclas)', { font: '18px Arial', fill: '#ffffff' });
+                let mensaje = 'Escena de entrada (presiona teclas)';
+                this.add.text(10, 10, mensaje, { font: '18px Arial', fill: '#ffffff' });
 
                 // Texto que mostrará la tecla pulsada
-                this.pressedKeyText = this.add.text(10, 40, 'Tecla: -', { font: '20px Arial', fill: '#ffff00' });
+                let keyPressed = 'Tecla: -';
+                this.pressedKeyText = this.add.text(10, 40, keyPressed, { font: '20px Arial', fill: '#ffff00' });
 
                 // Escuchar teclas y actualizar el texto en pantalla
                 this.input.keyboard.on('keydown', (event) => {
