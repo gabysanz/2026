@@ -26,7 +26,8 @@
             padding: 10px;
             box-sizing: border-box;
             text-align: justify;
-            font: 24px Arial, sans-serif;
+            font: 24px/1.2 Arial, sans-serif;
+            z-index: 9999;
             pointer-events: none;
             white-space: normal;
         }
@@ -46,13 +47,14 @@
 
             create() {
                 const mensajes = {
+                    start: 'Primi nu tastu qualegghiè p accuminciari',
                     padrenuestro: {
                         siciliano: "Patri nostru, chi siti 'n celu, Sia santificatu lu vostru nomu, Vinissi prestu lu vostru regnu, Sempri sia fatta la vostra Divina Vuluntati, Comu 'n celu accussì 'n terra. Dàtinillu sta jurnata lu panuzzu cutiddianu, E pirdunàtini li nostri piccati, Accussì comu nuautri li rimittemu ê nostri nimici, E nun ni lassati cascari ntâ tintazzioni, ma scanzàtini dû mali. Ámin."
                     }
                 };
 
                 // Crear/actualizar overlay HTML para mostrar texto justificado
-                const text = mensajes.padrenuestro.siciliano;
+                const text = mensajes.start//mensajes.padrenuestro.siciliano;
                 let overlay = document.getElementById('text-overlay');
                 if (!overlay) {
                     overlay = document.createElement('div');
