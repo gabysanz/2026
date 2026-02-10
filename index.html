@@ -90,10 +90,17 @@
                 // Escena vacía; aquí podrás añadir manejadores de teclas para jugar
                 this.add.text(10, 10, 'Escena de entrada (presiona teclas)', { font: '18px Arial', fill: '#ffffff' });
 
-                // Ejemplo: escuchar teclas individuales (puedes personalizar luego)
+                // Texto que mostrará la tecla pulsada
+                this.pressedKeyText = this.add.text(10, 40, 'Tecla: -', { font: '20px Arial', fill: '#ffff00' });
+
+                // Escuchar teclas y actualizar el texto en pantalla
                 this.input.keyboard.on('keydown', (event) => {
-                    // Por ahora solo mostramos la tecla en consola y en pantalla
-                    console.log('Tecla pulsada en InputScene:', event.key);
+                    let key = event.key;
+                    let display = key;
+                    if (key === ' ') display = 'SPACE';
+                    else if (key === 'Escape') display = 'ESC';
+                    else if (key === 'Enter') display = 'ENTER';
+                    this.pressedKeyText.setText('Tecla: ' + display);
                 });
             }
         }
