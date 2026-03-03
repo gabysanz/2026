@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Juego con Phaser</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #222;
+        }
+        canvas {
+            display: block;
+        }
+        /* Overlay para texto justificado en la esquina superior izquierda */
+        #text-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 640px;
+            max-width: 100%;
+            color: #ffffff;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: justify;
+            font: 24px/1.2 Arial, sans-serif;
+            z-index: 9999;
+            pointer-events: none;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Escena principal que contiene lo que ya tenías (texto overlay)
+        class MainScene extends Phaser.Scene {
+            constructor() {
+                super('MainScene');
+            }
+
+            preload() {
+                // Cargar assets aquí si hace falta
+            }
+
+            create() {
+                const mensajes = {
+                    start: 'Primi nu tastu qualegghiè p accuminciari',
+                    padrenuestro: {
+                        siciliano: "Patri nostru, chi siti 'n celu, Sia santificatu lu vostru nomu, Vinissi prestu lu vostru regnu, Sempri sia fatta la vostra Divina Vuluntati, Comu 'n celu accussì 'n terra. Dàtinillu sta jurnata lu panuzzu cutiddianu, E pirdunàtini li nostri piccati, Accussì comu nuautri li rimittemu ê nostri nimici, E nun ni lassati cascari ntâ tintazzioni, ma scanzàtini dû mali. Ámin."
+                    }
+                };
+
+                // Crear/actualizar overlay HTML para mostrar texto justificado
+                const text = mensajes.start//mensajes.padrenuestro.siciliano;
+                let overlay = document.getElementById('text-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.id = 'text-overlay';
+                    document.body.appendChild(overlay);
+                }
+                overlay.innerText = text;
+
+                // Al presionar cualquier tecla, salimos de esta escena y entramos en InputScene
+                this.input.keyboard.on('keydown', () => {
+                    this.scene.start('InputScene');
+                });
+
+                // Limpiar overlay cuando la escena se apaga
+                this.events.on('shutdown', () => {
+                    const el = document.getElementById('text-overlay');
+                    if (el && el.parentNode) el.parentNode.removeChild(el);
+                });
+            }
+
+            update() {
+                // Lógica de actualización si se necesita
+            }
+        }
+
+        // Escena vacía para recibir entrada de teclas durante el juego
+        class InputScene extends Phaser.Scene {
+            constructor() {
+                super('InputScene');
+            }
+
+            create() {
+                // Escena vacía; aquí podrás añadir manejadores de teclas para jugar
+                let mensaje = 'Escena de entrada (presiona teclas)';
+                this.add.text(10, 10, mensaje, { font: '18px Arial', fill: '#ffffff' });
+
+                // Texto que mostrará la tecla pulsada
+                let keyPressed = 'Tecla: -';
+                this.pressedKeyText = this.add.text(10, 40, keyPressed, { font: '20px Arial', fill: '#ffff00' });
+
+                // Escuchar teclas y actualizar el texto en pantalla
+                this.input.keyboard.on('keydown', (event) => {
+                    let key = event.key;
+                    let display = key;
+                    if (key === ' ') display = 'SPACE';
+                    else if (key === 'Escape') display = 'ESC';
+                    else if (key === 'Enter') display = 'ENTER';
+                    this.pressedKeyText.setText('Tecla: ' + display);
+                });
+            }
+        }
+
+        const config = {
+            type: Phaser.AUTO,
+            width: 640,
+            height: 480,
+            backgroundColor: '#2d2d2d',
+            scene: [MainScene, InputScene]
+        };
+
+        const game = new Phaser.Game(config);
+    </script>
+</body>
+</html>
