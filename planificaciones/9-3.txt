@@ -1,6 +1,6 @@
 jauretche
 
-voy a tomar lista y voy a anotar en un papel los nombres de los alumnos
+voy a tomar lista y voy a anotar en un papel los nombres de los alumnos en base a su ubicacion en el aula
 les voy a decir que me cuenten un poco sobre ellos y les voy a regalar una figurita o carta de pokemon a cada uno
 voy a reservar el aula de espacio digital
 voy a crear un google classroom
@@ -9,15 +9,18 @@ les voy a enseñar a usar los documentos de google
 https://static.buenosaires.gob.ar/sites/default/files/media/document/2017/10/26/ad4a5c873f97638ecdfa20ccb54bf6ddb7551cfe.pdf
 322 educacion tecnologica
 les voy a pedir que escriban los pasos para realizar una actividad o juego de manera detallada
+si les gusta cocinar les voy a pedir que escriban una receta que se acuerden, por mas simple que sea.
+si no podemos usar las computadoras lo van a tener que hacer en la carpeta.
 
 insumos: cable hdmi y fibron
 
 geniso
 
-voy a tomar lista y voy a anotar en un papel los nombres de los alumnos
+voy a tomar lista y voy a anotar en un papel los nombres de los alumnos en base a su ubicacion en el aula
 les voy a decir que me cuenten un poco sobre ellos y les voy a regalar una figurita o carta de pokemon a cada uno
 voy a reservar el aula de espacio digital
 le voy a pedir la llave a pablo
 en caso de no poder ir o por dar la clase en el aula de ellos lo que voy a hacer es tomar lista y explicarles un poco sobre algoritmos y les diré que tomen nota para pasarlo a github la proxima clase.
 les voy a explicar que es javascript y que es python.
+tambien les contaré lo que es la extension de un archivo y que en javascript se usa .js y en python se usa .py
 les diré que voy a evaluar mirando sus carpetas y que si no pueden copiar en computadora porque no pudimos ir al aula o porque no abrieron el classroom lo que van a tener que hacer es copiar del pizarron.
